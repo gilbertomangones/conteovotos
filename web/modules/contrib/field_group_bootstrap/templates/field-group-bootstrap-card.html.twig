@@ -1,0 +1,33 @@
+{#
+/**
+ * @file
+ * Default theme implementation for a fieldgroup html element.
+ *
+ * Available variables:
+ * - title: Title of the group.
+ * - children: The children of the group.
+ * - attributes: A list of HTML attributes for the group wrapper.
+ * - button: Return HTML button.
+ * - modal_drupal: Used drupal modal or not.
+ *
+ * @see template_preprocess_field_group_modal_bootstrap()
+ *
+ * @ingroup themeable
+ */
+#}
+<div {{ attributes }}>
+  <div id="{{ id }}" class="card">
+    <div class="card card-body">
+      {% if title %}
+        <h5 class="card-title">{{ title }}</h5>
+      {% endif %}
+      <p class="card-text">{{ children }}</p>
+    </div>
+
+    {% if footer %}
+    <div class="card-footer text-muted">
+      {{ footer }}
+    </div>
+    {% endif %}
+  </div>
+</div>

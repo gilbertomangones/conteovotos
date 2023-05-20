@@ -1,0 +1,30 @@
+{#
+/**
+ * @file
+ * Default theme implementation for a fieldgroup html element.
+ *
+ * Available variables:
+ * - title: Title of the group.
+ * - children: The children of the group.
+ * - attributes: A list of HTML attributes for the group wrapper.
+ * - button: Return HTML button.
+ * - modal_drupal: Used drupal modal or not.
+ *
+ * @see template_preprocess_field_group_modal_bootstrap()
+ *
+ * @ingroup themeable
+ */
+#}
+<div {{ attributes }}>
+  <button type="button" class="btn {{ button.class }}" data-bs-toggle="popover" data-bs-placement="{{ placement }}"
+          data-bs-content="{{ children|striptags|trim }}"
+    {% if title %}
+      data-bs-title="{{ title }}"
+    {% endif %}
+    {% if custom_class %}
+      data-bs-custom-class="{{ custom_class }}"
+    {% endif %}
+  >
+    {{ button.title }}
+  </button>
+</div>

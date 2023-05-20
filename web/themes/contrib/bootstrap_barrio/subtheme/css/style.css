@@ -1,0 +1,13 @@
+/**
+ * @file
+ * Subtheme specific CSS.
+ */
+ .node-votaciones-form table input {
+    width: 80%;
+    font-size: 12px;
+}
+
+.node-votaciones-form th {
+    font-size: 0.7em;
+    text-align: center;
+}

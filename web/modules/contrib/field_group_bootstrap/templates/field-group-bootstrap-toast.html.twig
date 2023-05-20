@@ -1,0 +1,17 @@
+{% set classes = ['toast-container', 'position-fixed', 'p-3'] %}
+<div {{ attributes.addClass(classes) }}>
+  <div id="{{ id }}" class="toast fade show" role="alert" aria-live="assertive" aria-atomic="true" {% if delay %}data-bs-delay="{{ delay }}"{% endif %}>
+    <div class="toast-header">
+      {% if title %}
+        <strong class="me-auto">{{ title }}</strong>
+      {% endif %}
+      {% if small %}
+        <small class="text-muted">{{ small }}</small>
+      {% endif %}
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">
+      {{ children }}
+    </div>
+  </div>
+</div>
